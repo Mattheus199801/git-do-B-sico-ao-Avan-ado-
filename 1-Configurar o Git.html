@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurar o Git</title>
+</head>
+<body>
+    <h1>Configurar o Git</h1>
+    <p>Isso é importante para sistemas de controle de versão, pois cada commit do Git usa essas informações:</p>
+
+    <h2>Nome de usuário</h2>
+    <p>Seu nome será anexado aos seus commits. Defina-o com:</p>
+    <ul>
+        <li>git config --global user.name "Sombra da noite"</li>
+    </ul>
+
+    <h2>Endereço de email</h2>
+    <p>Seu e-mail também é anexado aos seus commits. Defina-o com:</p>
+    <ul>
+        <li>git config --global user.email "sombra123@exemplo.com"</li>
+    </ul>
+    <p>Você provavelmente também vai querer usar isso ao se registrar no GitHub mais tarde.</p>
+    <ul>
+        <li>Use <mark>--global</mark> para definir o valor para cada repositório no seu computador.</li>
+        <li>Use <mark>--local</mark> (o padrão) para defini-lo somente para o repositório atual.</li>
+    </ul>
+
+    <h2>Visualizando sua configuração</h2>
+    <ul>
+        <li>git config --list</li>
+    </ul>
+
+    <h2>Exibir uma configuração específica</h2>
+    <ul>
+        <li>git config user.name</li>
+    </ul>
+
+    <h2>Alterar ou desconfigurar valores de configuração</h2>
+    <ul>
+        <li>Para alterar um valor, basta executar o <mark>git config</mark> comando novamente com o novo valor.</li>
+        <li>Para remover uma configuração, use <mark>--unset</mark>:</li>
+    </ul>
+
+    <h3>Desfazer a definição de um alias</h3>
+    <ul>
+        <li>git config --global --unset code.editor</li>
+    </ul>
+
+    <h2>Nome da filial padrão</h2>
+    <p>Defina o nome do branch padrão para novos repositórios (por exemplo, <mark>main </mark>em vez de <mark>master</mark>):</p>
+    <ul>
+        <li>git config --global init.defaultBranch main</li>
+    </ul>
+
+    <h2>Níveis de configuração</h2>
+    <p>Existem três níveis de configuração:</p>
+    <ul>
+        <li>Sistema (todos os usuários):<mark>git config --system</mark></li>
+        <li>Global (usuário atual):<mark>git config --global</mark></li>
+        <li>Local (repositório atual):<mark>git config --local</mark></li>
+    </ul>
+    <p>A ordem de precedência é:</p>
+    <ul>
+        <li>Local (repositório atual)</li>
+        <li>Global (usuário atual)</li>
+        <li>Sistema (todos os usuários)</li>
+    </ul>
+    <p>
+        O motivo para usar níveis diferentes é que você pode definir valores diferentes para usuários ou repositórios diferentes. <br>
+        <br>
+        Isso pode ser usado, por exemplo, para definir diferentes ramificações padrões para diferentes repositórios e usuários.
+    </p>
+
+    <h3>definir uma configuração local</h3>
+    <p>As configurações locais se aplicam somente ao repositório atual.</p>
+    <ul>
+        <li>git config user.name "Project Name"</li>
+    </ul>
+
+    <h3>definir uma configuração global</h3>
+    <p>As configurações globais se aplicam a todos os repositórios do usuário atual.</p>
+    <ul>
+        <li>git config --global user.name "Global Name"</li>
+    </ul>
+
+    <h3>definir uma configuração do sistema</h3>
+    <p>As configurações do sistema se aplicam a todos os repositórios para todos os usuários.</p>
+    <ul>
+        <li>git config --system user.name "System Name"</li>
+    </ul>
+</body>
+</html>
